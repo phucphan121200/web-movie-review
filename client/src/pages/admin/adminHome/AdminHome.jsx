@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "./adminHome.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Navbar from '../../../components/admin/navbarAdmin/NavbarAdmin';
 import Footer from "../../../components/admin/footerAdmin/FooterAdmin"
 import Topbar from '../../../components/admin/topbarAdmin/topbarAdmin';
@@ -15,12 +15,15 @@ function Home() {
       <Topbar/>
       <div className="container">
       <Sidebar />
-      <MainAdmin />
+
+        
+            <MainAdmin />
+         
+      
+      </div> 
+      <Footer/>
       </div>
-      </div>
-  
-       
-     
+
     );
 }
     

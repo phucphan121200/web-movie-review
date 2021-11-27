@@ -1,11 +1,10 @@
 import "./sidebarAdmin.scss";
 import {
+  Face,
   LineStyle,
   Timeline,
-  TrendingUp,
+  Movie,
   PermIdentity,
-  Storefront,
-  AttachMoney,
   BarChart,
   MailOutline,
   DynamicFeed,
@@ -22,40 +21,32 @@ export default function Sidebar() {
         <div className="Menu">
           <h3 className="Title">Dashboard</h3>
           <ul className="List">
-            <Link to="/" className="link">
+            <Link to="/HomeAdmin" className="link">
             <li className="ListItem active">
               <LineStyle className="Icon" />
               Home
             </li>
             </Link>
-            <li className="ListItem">
-              <Timeline className="Icon" />
-              Analytics
-            </li>
-            <li className="ListItem">
-              <TrendingUp className="Icon" />
-              Sales
-            </li>
           </ul>
         </div>
         <div className="Menu">
           <h3 className="Title">Quick Menu</h3>
           <ul className="List">
-            <Link to="/users" className="link">
+            <Link to="/UserManager" className="link">
               <li className="ListItem">
                 <PermIdentity className="Icon" />
                 Users
               </li>
             </Link>
-            <Link to="/products" className="link">
+            <Link to="/CastManager" className="link">
               <li className="ListItem">
-                <Storefront className="Icon" />
-                Products
+                <  Face className="Icon" />
+                Cast
               </li>
             </Link>
             <li className="ListItem">
-              <AttachMoney className="Icon" />
-              Transactions
+              <Movie className="Icon" />
+              Movie
             </li>
             <li className="ListItem">
               <BarChart className="Icon" />

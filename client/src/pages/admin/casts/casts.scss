@@ -1,0 +1,129 @@
+.casts{  
+    flex: 4;   
+}
+.container{
+    display: flex;
+    margin-top: 10px;
+  }
+  .castTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .castAddButton {
+    width: 80px;
+    border: none;
+    padding: 5px;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .castTop {
+    
+    flex: 1;
+  }
+  
+  
+  .castTopRight {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  }
+  
+  .castInfoImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .castInfoTop {
+    display: flex;
+    align-items: center;
+  }
+  
+  .castName {
+    font-weight: 600;
+  }
+  
+  .castInfoBottom {
+    margin-top: 10px;
+  }
+  
+  .castInfoItem {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .castInfoValue {
+    font-weight: 300;
+  }
+  
+  .castBottom {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.466);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  }
+  
+  .castForm {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .castFormLeft {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .castFormLeft > label {
+    margin-bottom: 10px;
+    color: gray;
+  }
+  
+  .castFormLeft > input {
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+  }
+  
+  .castFormLeft >select{
+    margin-bottom: 10px;
+  }
+  
+  .castUploadImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .castFormRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .castUpload{
+    display: flex;
+    align-items: center;
+  }
+  
+  .castButton{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkblue;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+  }

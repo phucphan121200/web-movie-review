@@ -22,16 +22,16 @@ class userService {
     }
     static async deleteUser(id) {
       console.log(id);
-      return await User.findByIdAndDelete(id);
+      return await User.findByIdAndUpdate(id, { $set: {"status": false} }, {new: true});
     }
     static async getById(id) {
       return await User.findById(id);
     }
     static async getAll() {
-      return await User.find({});
+      return await User.find({"status": true});
     }
     static async getAlllimit2() {
-      return await User.find({}).limit(2);
+      return await User.find({"status": true}).limit(2);
     }
     static async aggregate(){
       return await User.aggregate ([{ $project: { month: { $month: "$createdAt" },},}

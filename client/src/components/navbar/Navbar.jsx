@@ -60,7 +60,7 @@ const Navbar = () => {
                     <span><Link className="link" to="/">Home</Link></span>
                     <span><Link className="link" to="/series">Series</Link></span>
                     <span><Link className="link" to="/movies">Movies</Link></span>
-                    <span><Link className="link" to="/news">New and Popular</Link></span>
+                    <span><Link className="link" to="/forum">Forum</Link></span>
                     <span>Celebrity</span>
                     <span>Watch List</span>
                 </div>

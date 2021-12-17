@@ -23,3 +23,11 @@ export const dispatchGetUser = (res) => {
         }
     }
 }
+export const updateUser = (newUser) => {
+    return {
+        type: ACTIONS.UPDATE_USER,
+        payload: {
+            data: newUser
+        }
+    }
+}

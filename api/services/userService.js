@@ -29,6 +29,7 @@ class userService {
         +user.createdAt.getDate()+'-' + (user.createdAt.getMonth()+1) + '-'+user.createdAt.getFullYear();
       info.updatedAt= user.updatedAt.getHours() + ":" + user.updatedAt.getMinutes() + ":" + user.updatedAt.getSeconds()+ ' ' + 
         user.updatedAt.getDate()+'-' + (user.updatedAt.getMonth()+1) + '-'+user.updatedAt.getFullYear();
+      info.password = password;
       return info;
     }
     static async getAll() {

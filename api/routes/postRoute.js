@@ -29,5 +29,17 @@ router.get("/getallpublishbyuser", verifyToken, postController.getallpublishbyus
 router.get("/getallwritingbyuser", verifyToken, postController.getallwritingbyuser);
 //GET ALL HIDEN POST BY USER
 router.get("/getallhiddenbyuser", verifyToken, postController.getallhiddenbyuser);
+//GET POPULAR POST
+router.get("/getpopular", postController.getpopular);
+//SAVE POST
+router.put("/update/:id", verifyToken, postController.update);
+//LIKE POST
+router.put("/like/:id", verifyToken, postController.like);
+//LIKE COUNT
+router.get("/likecount/:id", postController.likecount);
+//GET MOST LIKE POST
+router.get("/getmostlike", postController.getmostlike);
+//GET NEW POST
+router.get("/getnew", postController.getnew);
 
 module.exports = router;

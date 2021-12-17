@@ -1,0 +1,136 @@
+.profileScreen {
+    height: 100vh;
+    color: white;
+    background-image: url('https://wallpaperaccess.com/full/329583.jpg');
+}
+.profileScreen_body{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 10px;
+    max-width: 800px;
+}
+
+.containers {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+
+    form {
+    box-shadow: 7px 7px rgb(15, 15, 15);
+      width: 600px;
+      height: 450px;
+      padding: 30px;
+      border-radius: 5px;
+      background-color: #191818;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+}
+.profileScreen_info {
+    display: flex;
+    margin-top: 10px;
+}
+.profileScreen_details{
+    color: white;
+    margin-left: 25px;
+    flex: 1;
+    input {
+    
+        height: 40px;
+        width: 380px;
+        border-radius: 5px;
+        background-color: rgb(116, 116, 116);
+        color: white;
+        padding-left: 10px;
+    
+        &::placeholder {
+          color: lightgray;
+        }
+        
+      }
+      .span {
+          display: flex;
+        color: lightgray;
+        b {
+          color: white;
+          &:hover{
+            color: red;
+            cursor: pointer;
+          }
+        }
+      }
+    
+}
+.profileScreen_body > h1 {
+    font-size: 60px;
+    font-weight: 400;
+    border-bottom: 1px solid #282c2d;
+    margin-bottom: 30px;
+    text-shadow: 5px 5px gray;
+    
+}
+.line{
+    margin-bottom: 5px;
+  }
+.profileScreen_plans
+{
+    margin-top: 20px;
+}
+.profileScreen_info > img {
+    height: 140px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.profileScreen_plans > h3 {
+    border-bottom: 1px solid #282c2d;
+    padding-bottom: 10px;
+}
+.profileScreen_details > h2{
+    background-color: gray;
+    padding: 13px;
+    font-size: 15px;
+    padding-left: 20px;
+    border-bottom: 1px solid #282c2d;
+}
+
+.profileScreen_update {
+    display: block;
+    float: left;
+    padding: 8px 20px;
+    font-size: 1rem;
+    margin-top: 0.01%;
+    width: 195px;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.profileScreen_changePass {
+    display: block;
+    float: right;
+    padding: 8px 20px;
+    font-size: 1rem;
+    margin-top: 0.01%;
+    width: 195px;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}

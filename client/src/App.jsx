@@ -13,6 +13,7 @@ import Navbar from "./components/navbar/Navbar";
 import Email from "./pages/email/email";
 import Resetpassword from "./pages/resetPassword/resetPassword";
 import { useSelector } from 'react-redux'
+import ProfileScreen from "./components/ProfileScreen/ProfileScreen";
 
 function App () {
   const auth = useSelector(state => state.auth)
@@ -50,6 +51,9 @@ function App () {
         </Route>
         <Route path="/series">
             <Home type="series"/>
+        </Route>
+        <Route path="/profile" >
+            <ProfileScreen/>
         </Route>
         <Route path="/watch">
             <Watch/>

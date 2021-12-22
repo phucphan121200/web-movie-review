@@ -1,8 +1,9 @@
 .castdetail{
+    text-align: justify;
     background-color: var(--main-color);
-
- 
-
+    
+    background: rgba(0, 0, 0, 0.616);
+   
     .name-cast{
         color: white;
         display: flex;
@@ -16,46 +17,40 @@
         padding: 0px 6%;
         text-align: center;
     }
-    .info{
+    .IconCastReturn{
+        margin-right: 5px;
+        color: white;
+        font-size: 50px ;
+        padding: 10px 10px;
+        font-weight: 900;
+    }
+    .infocastDT{
         display: flex;
         img{
-            flex: 2;
             display : block;
-            height: 300px;
+            height: 400px;
             width: 300px;
-            padding: 0 4%;
+            padding: 0 2%;
             padding-left: 150px;
+           
+            object-fit:cover;
             }
-            .content{
-                color: white;
-                
-                line-height: 1.6rem;
-               
-                .item{
-                    margin-bottom: .25em;
-                }
-               
-            }
+            
     }
-    .summary{
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        
-        padding-right: 100px;
-        white-space: normal;
-        margin: 0 auto;
-
-        max-height: initial!important;
-        height: fit-content;
-        
-       
+    .contentcastDT{
+        color: whitesmoke;       
+        line-height: 1.6rem;
+        padding-right: 40px;
+        .itemcastDT{
+            margin-bottom: .25em;
+        }
+       p{
+           color: whitesmoke;
+       }
     }
-    
-     
-    
-
-
-   
-    
+    .rootbackground{
+        background: transparent;
+    }
 }
+
 

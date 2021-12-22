@@ -68,8 +68,7 @@ exports.delete = async (req, res) => {
   }
 //FIND
 exports.find = async (req, res) => {
-    if(req.userExists.isAdmin){
-      //console.log(req.userExists.isAdmin)
+   
       try {
         const findCast = await castService.getById(req.params.id);
         if(!findCast){
@@ -80,10 +79,7 @@ exports.find = async (req, res) => {
       }catch(err){
         res.status(500).json(err);
       }
-    }
-    else{
-      res.status(403).json("Only admin can find casts")
-    }
+   
   }
   
   //GET ALL CATEGORY

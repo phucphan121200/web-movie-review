@@ -44,8 +44,11 @@ function App () {
         <Route path ="/movies/:id">
           <MovieDetail></MovieDetail>
         </Route>
+        <Route path ="/castDetail/:id">
+          <CastDT/>
         <Route path="/forum">
             <ForumHome/>
+
         </Route>
         {isLogged && (
           <>
@@ -58,7 +61,6 @@ function App () {
         <Route path="/watch">
             <Watch/>
         </Route>
-        
         
         
         </>

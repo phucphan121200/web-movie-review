@@ -12,6 +12,6 @@ router.put("/delete/:id", verifyToken, categoryController.delete);
 //GET
 router.get("/find/:id", verifyToken, categoryController.find);
 //GET ALL
-router.get("/", verifyToken, categoryController.getall);
+router.get("/", categoryController.getall);
 
 module.exports = router;

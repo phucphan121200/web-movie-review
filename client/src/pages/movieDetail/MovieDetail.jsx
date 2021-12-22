@@ -1,4 +1,5 @@
 import Featured from "../../components/featured/Featured"
+import { useLocation} from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar"
 import FeaturedMovie from "../../components/featuredMovie/FeaturedMovie"
 import "./movieDetail.scss"
@@ -15,10 +16,16 @@ import { dispatchLogin, fetchUser, dispatchGetUser } from '../../redux/actions/a
 import axios from "axios"
 
 const MovieDetail = () => {
+    const location = useLocation();
+    const [path, movieId] = location.pathname.split("/movies/");
+    console.log('movieID: ', movieId)
     const dispatch = useDispatch()
     const token = useSelector(state => state.token)
     const auth = useSelector(state => state.auth)
+    const moviesStore = useSelector(state => state.movie.movie)
+
     useEffect(() => {
+
         const firstlogin = localStorage.getItem('firstlogin')
         if (firstlogin) {
             const getToken = async () => {
@@ -43,36 +50,41 @@ const MovieDetail = () => {
     }, [token, dispatch])
     useEffect(() => {
         const getMovie = () => {
-            return fetchMovie("61b42a606bc815236804f9e9").then(res => {
+            return fetchMovie(movieId).then(res => {
                 dispatch(dispatchGetMovie(res))
             })
         }
         getMovie()
-    }, [dispatch])
+    }, [movieId])
+
     useEffect(() => {
         const getMovie = () => {
-            return fetchRatingMovie("61b42a606bc815236804f9e9").then(res => {
+            return fetchRatingMovie(movieId).then(res => {
                 dispatch(dispatchGetRatingMovie(res))
             })
         }
         getMovie()
-    }, [dispatch])
+    }, [movieId])
     return (
         <div className="movieDetail">
-            <div className="sort-cast-relate">
-                <Navbar />
-                <FeaturedMovie />
-                <span className="sort-cast-deatil">
-                    <ListCast />
-                    <DetailMovie />
-                    <CommentList />
-                </span>
-                <span className="sort-relate-votelist">
-                    <Related />
-                    <VoteList />
-                    <ModalNotiRating />
-                </span>
-            </div>
+            {
+                moviesStore.length !== 0 && 
+                <div className="sort-cast-relate">
+                    <Navbar />
+                    <FeaturedMovie />
+                    <span className="sort-cast-deatil">
+                        <ListCast />
+                        <DetailMovie />
+                        <CommentList />
+                    </span>
+                    <span className="sort-relate-votelist">
+                        <Related />
+                        <VoteList />
+                        <ModalNotiRating />
+                    </span>
+                </div>
+            }
+            
         </div>
     )
 }

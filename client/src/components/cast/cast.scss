@@ -1,7 +1,7 @@
 .cast{
     margin-top: 20px;
     width: 150px;
-    height: 200px;
+    height: 230px;
     overflow: hidden;
     margin-right: 70px;
     cursor: pointer;
@@ -16,10 +16,12 @@
         }
     }
     .name-cast{
+        overflow: hidden;
         color: white;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
+       
         transition: 0.8s;
         &:hover{
             color: gray;
@@ -27,6 +29,7 @@
         }
     }
     .name-charac{
+
         color: lightgrey;
         text-align: center;
     }

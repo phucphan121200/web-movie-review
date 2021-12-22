@@ -11,7 +11,7 @@ router.put("/update/:id", verifyToken, castController.update);
 //DELETE
 router.put("/delete/:id", verifyToken, castController.delete);
 //GET
-router.get("/find/:id", verifyToken, castController.find);
+router.get("/find/:id",  castController.find);
 //GET ALL
 router.get("/", verifyToken, castController.getall);
 //TOTAL CAST

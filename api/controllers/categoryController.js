@@ -95,8 +95,7 @@ exports.find = async (req, res) => {
   //GET ALL CATEGORY
   exports.getall = async (req, res) => {
     const query = req.query.new;
-    if(req.userExists.isAdmin){
-      //console.log(req.userExists.isAdmin)
+  
       try {
         const findAllCategory = query ? await categoryService.getAlllimit2() : await categoryService.getAll();
         if(!findAllCategory){
@@ -107,8 +106,5 @@ exports.find = async (req, res) => {
       }catch(err){
         res.status(500).json(err);
       }
-    }
-    else{
-      res.status(403).json("You are not allowed to see all categories!")
-    }
+    
   }

@@ -37,7 +37,7 @@ const Home = ({type}) => {
   },[token, dispatch])
   useEffect(() => {
       const getMovie = () => {
-        return fetchMovie("61b42a606bc815236804f9e9").then(res => {
+        return fetchMovie("6196757511a521225c2849c9").then(res => {
           dispatch(dispatchGetMovie(res))
         })
       }

@@ -1,5 +1,5 @@
 import { Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined } from "@material-ui/icons"
-import "./listItem.scss"
+import "./listItemForGenre.scss"
 import { useState } from "react";
 
 export default function ListItem(index) {
@@ -8,15 +8,15 @@ export default function ListItem(index) {
     return (
         <div>
             <div 
-            className="listItem"
-            style={{left: isHovered && index *225 - 50 + index *2.5}}
+            className="listItemForGenre"
+            style={{left: isHovered && 225 - 50 + 2.5}}
             onMouseEnter={()=>setIsHovered(true)}
             onMouseLeave={()=>setIsHovered(false)}>
-                <img src="https://i.ytimg.com/vi/V0NlakykRTc/maxresdefault.jpg" alt="" />
+                <img src= {''}alt="" />
                 {isHovered && (
                 <>
                 <video src={trailer} autoPlay={true} loop muted={true}></video>
-                <div className="itemInfo">
+                <div className="itemInfoForGenre">
                     <div className="icons">
                         <PlayArrow className="icon"/>
                         <Add className="icon"/>

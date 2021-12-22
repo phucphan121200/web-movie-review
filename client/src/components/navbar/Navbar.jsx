@@ -10,6 +10,9 @@ import { useSelector } from 'react-redux'
 import Searchbar from "../Searchbar/Searchbar";
 import axios from "axios";
 
+import Dropdown from "../dropdownGenre/DropdownGenre";
+
+
 const Navbar = () => {
     const auth = useSelector(state => state.auth)
     const { user, isLogged } = auth
@@ -47,7 +50,22 @@ const Navbar = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true);
         return () => (window.onscroll = null);
     };
-
+    const [dropdown, setDropdown] = useState(false);
+    const onMouseEnter = () =>{
+        if (window.innerWidth < 960) {
+          setDropdown(false);
+        } else {
+          setDropdown(true);
+        }
+      };
+      const onMouseLeft = () => {
+        if (window.innerWidth < 960) {
+          setDropdown(false);
+        } else {
+          setDropdown(false);
+        }
+      };
+      
     return (
         <div className={isScolled ? "navbar scrolled" : "navbar"}>
             <div className="container">
@@ -58,8 +76,18 @@ const Navbar = () => {
                         alt=""
                     />
                     <span><Link className="link" to="/">Home</Link></span>
+                    
                     <span><Link className="link" to="/series">Series</Link></span>
                     <span><Link className="link" to="/movies">Movies</Link></span>
+                    <span
+                     onMouseEnter={onMouseEnter}
+                     onMouseLeave ={onMouseLeft}
+                     >
+                     <Link className="iconGenre"  
+                    > Genre  <ArrowDropDown /> </Link>
+                      <Dropdown dropdown={dropdown} setDropdown={setDropdown}/>
+                    </span>
+                    
                     <span><Link className="link" to="/news">New and Popular</Link></span>
                     <span>Celebrity</span>
                     <span>Watch List</span>
@@ -73,6 +101,7 @@ const Navbar = () => {
                         <button className="signupButton"><Link style={{ textDecoration: 'none', color: 'red' }} to="/register">Sign up</Link></button></>
                     }
                 </div>
+              
             </div>
         </div>
     )

@@ -43,6 +43,9 @@ function App () {
         <Route path ="/movies/:id">
           <MovieDetail></MovieDetail>
         </Route>
+        <Route path ="/castDetail/:id">
+          <CastDT/>
+        </Route>
         {isLogged && (
           <>
         <Route path="/movies">
@@ -55,7 +58,7 @@ function App () {
             <Watch/>
         </Route>
         <Route path="/news">
-            <News/>
+            <NewDetail/>
         </Route>
         
         

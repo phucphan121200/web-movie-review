@@ -10,7 +10,7 @@ const PostSchema = new mongoose.Schema(
         title: {type: String, default: ""},
         content: {type: String, default: ""},
         desc: {type: String, default: ""},
-        thumbnail: {type: String, default: ""},
+        thumbnail: {type: String, default: "https://static-cse.canva.com/blob/651263/youtube.jpg"},
         genre: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Genre",

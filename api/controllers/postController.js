@@ -19,17 +19,41 @@ exports.add = async (req, res) => {
         if (existTitle) {
             res.status(400).json({ msg: "This title has already exist!" });
         }
-        else if (content.length < 20 || content.length > 200) {
+        else {
+            const post = await postService.addPost(newPost);
+            res.status(201).json(post);
+        }
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+//PUBLISH
+exports.publish = async (req, res) => {
+    const { title, content, desc, thumbnail, genre } = req.body;
+    const newPost = {
+        user: req.userExists.id,
+        title: title,
+        content: content,
+        desc: desc,
+        thumbnail: thumbnail,
+        genre: genre,
+        status: true
+    }
+    try {
+        const existTitle = await postService.checkExistPost(title);
+        if (existTitle) {
+            res.status(400).json({ msg: "This title has already exist!" });
+        }else if (desc.length < 20 || desc.length > 200) {
             res.status(400).json({ msg: "Must between 20-200" });
         }
-        else if (desc.length < 2000) {
+        else if (content.length < 2000) {
             res.status(400).json({ msg: "Your post must be more than 2000 characters" });
         }
         else if (!genre) {
             res.status(400).json({ msg: "Please choose Category of Post" });
         }
         else {
-            const post = await postService.addPost(newPost);
+            const post = await postService.publishPost(newPost);
             res.status(201).json(post);
         }
     } catch (err) {
@@ -53,8 +77,9 @@ exports.createpost = async (req, res) => {
 exports.autosave = async (req, res) => {
     console.log(req.params.id)
     const checkUser = await postService.getPost(req.params.id);
-    console.log(checkUser)
-    if (checkUser.user == req.userExists.id) {
+    console.log("user", checkUser.user)
+    console.log("userExist", req.userExists.id)
+    if (checkUser.user._id == req.userExists.id) {
         const { title, content, desc, thumbnail, genre } = req.body;
         const autosavePost = {
             user: req.userExists.id,

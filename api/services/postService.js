@@ -6,6 +6,9 @@ class postService {
     static async addPost(data) {
         return await Post(data).save();
     }
+    static async publishPost(data) {
+        return await Post(data).save();
+    }
     static async checkExistPost(title) {
         return await Post.findOne({ title });
     }

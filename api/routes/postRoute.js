@@ -5,6 +5,8 @@ const postController = require("../controllers/postController");
 
 //ADD
 router.post("/add", verifyToken, postController.add);
+//PUBLISH
+router.post("/publish", verifyToken, postController.publish);
 //CREATE POST
 router.post("/createpost", verifyToken, postController.createpost);
 //AUTO SAVE POST

@@ -13,6 +13,7 @@ import Navbar from "./components/navbar/Navbar";
 import Email from "./pages/email/email";
 import Resetpassword from "./pages/resetPassword/resetPassword";
 import { useSelector } from 'react-redux'
+import ForumHome from "./pages/ForumHome/ForumHome";
 
 function App () {
   const auth = useSelector(state => state.auth)
@@ -45,6 +46,9 @@ function App () {
         </Route>
         <Route path ="/castDetail/:id">
           <CastDT/>
+        <Route path="/forum">
+            <ForumHome/>
+
         </Route>
         {isLogged && (
           <>
@@ -56,9 +60,6 @@ function App () {
         </Route>
         <Route path="/watch">
             <Watch/>
-        </Route>
-        <Route path="/news">
-            <NewDetail/>
         </Route>
         
         

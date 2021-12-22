@@ -111,6 +111,9 @@ exports.login = async (req, res) => {
         if (!userExists) {
           res.status(401).json({ success: false, msg: "Wrong password or username!" });
         }
+        if(!userExists.status){
+          res.status(401).json({ success: false, msg: "Invalid Account" });
+        }
         const bytes = CryptoJS.AES.decrypt(userExists.password, process.env.SECRET_KEY);
         const originalPassword = bytes.toString(CryptoJS.enc.Utf8);
     
@@ -374,6 +377,7 @@ exports.remove = async (req, res) => {
 exports.googleLogin = async (req, res) => {
   try {
     const { tokenId } = req.body;
+    //console.log(tokenId)
     const verify = await client.verifyIdToken({ idToken: tokenId, audience: process.env.MAILING_SERVICE_CLIENT_ID });
     //console.log(verify);
     const { email_verified, given_name, family_name, email, picture } = verify.payload;
@@ -391,13 +395,14 @@ exports.googleLogin = async (req, res) => {
           profilePic: picture,
         }
         const useradd = await userService.registration(newUser);
-        //console.log(useradd)
+        console.log(useradd)
         const refresh_token = await refreshToken({ id: useradd._id, isAdmin: useradd.isAdmin });
         res.cookie('refreshtoken', refresh_token, {
           httpOnly: true,
           path: 'users/refresh_token',
           maxAge: 30 * 24 * 60 * 60 * 1000
         })
+        res.status(200).json(useradd)
       }
       if (user) {
         const refresh_token = await refreshToken({ id: user._id, isAdmin: user.isAdmin });
@@ -406,8 +411,9 @@ exports.googleLogin = async (req, res) => {
           path: 'users/refresh_token',
           maxAge: 30 * 24 * 60 * 60 * 1000
         })
+        res.status(200).json(user)
       }
-      res.status(200).json(user)
+      
     }
     else {
       res.status(400).json({ msg: "Email verification failed!" })
@@ -447,6 +453,7 @@ exports.facebooklogin = async (req, res) => {
         path: 'users/refresh_token',
         maxAge: 30 * 24 * 60 * 60 * 1000
       })
+      res.status(200).json(useradd)
     }
     if (user) {
       const refresh_token = await refreshToken({ id: user._id, isAdmin: user.isAdmin });
@@ -455,9 +462,11 @@ exports.facebooklogin = async (req, res) => {
         path: 'users/refresh_token',
         maxAge: 30 * 24 * 60 * 60 * 1000
       })
+      res.status(200).json(user)
     }
-    res.status(200).json(user)
+    
   } catch (err) {
+    console.log(err)
     return res.status(500).json({ msg: err.message });
   }
 }
@@ -465,7 +474,7 @@ exports.facebooklogin = async (req, res) => {
 exports.getAccessToken = async (req, res) => {
   try {
       const rf_token = req.cookies.refreshtoken
-      console.log("Lala: ", rf_token)
+      //console.log("Lala: ", rf_token)
       if(!rf_token) 
       {
         return res.status(400).json({msg: "Please login now!"})

@@ -88,7 +88,9 @@ const Navbar = () => {
                       <Dropdown dropdown={dropdown} setDropdown={setDropdown}/>
                     </span>
                     
-                    <span><Link className="link" to="/news">New and Popular</Link></span>
+
+                    <span><Link className="link" to="/forum">Forum</Link></span>
+
                     <span>Celebrity</span>
                     <span>Watch List</span>
                 </div>

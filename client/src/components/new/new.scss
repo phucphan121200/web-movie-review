@@ -1,8 +1,9 @@
 .new{
     padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-right: 50px !important;
     padding-top: 10px !important;
     float: left;
+    padding-bottom: 50px;
     
     .Image{
         box-sizing: border-box;
@@ -29,6 +30,7 @@
          margin: 0 !important;
          padding: 0;
         }
+        
 
     }
 
@@ -37,7 +39,8 @@
 @media (min-width: 768px)
 {
     .new{
-        width: 350px;
+        width: 300px;
+        
     }
 }
 

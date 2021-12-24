@@ -170,6 +170,7 @@ export default function NewCharacter() {
     };
     addChar();
   };
+ 
   return (
     <div className="newCharacter">
       <h1 className="addCharacterTitle">Character Manager</h1>

@@ -8,10 +8,10 @@ import { makeStyles } from "@material-ui/core";
 import Slide from "@material-ui/core/Slide";
 import {
   ArrowBack,
-  Add,
   PlayArrow,
   ThumbDownAltOutlined,
   ThumbUpAltOutlined,
+  Info
 } from "@material-ui/icons";
 import * as React from "react";
 import { Link } from "react-router-dom";
@@ -132,7 +132,7 @@ function Dropdown({ dropdown, setDropdown }) {
                                 to={{ pathname: "/movies/"+item._id  }}
                               >
                                 <>
-                                  <Add type="button" className="icon" />
+                                  <Info type="button" className="icon" />
                                 </>
                               </Link>
 

@@ -73,36 +73,7 @@ export default function ListCast() {
               </div>
           ))
         }
-{/*        
-       <div 
-      onClick={() => handleClickOpen(movie.castItems[0].character.cast[0]._id)}
-       >
-       <Cast 
-        id={movie.castItems[0].character._id} 
-      
-        nameCha ={movie.castItems[0].character.name}
-        castPic ={movie.castItems[0].character.cast[0].castPic}
-        nameCast ={movie.castItems[0].character.cast[0].name} 
-        />
-        </div>
-        <div 
-      onClick={() => handleClickOpen(movie.castItems[1].character.cast[0]._id)}
-       >
-        <Cast 
-        id={movie.castItems[1].character._id} 
-        nameCha ={movie.castItems[1].character.name}
-        castPic ={movie.castItems[1].character.cast[0].castPic}
-        nameCast ={movie.castItems[1].character.cast[0].name} />
-        </div>
-        <div 
-      onClick={() => handleClickOpen(movie.castItems[2].character.cast[0]._id)}
-       >
-        <Cast 
-        id={movie.castItems[2].character._id} 
-        nameCha ={movie.castItems[2].character.name}
-        castPic ={movie.castItems[2].character.cast[0].castPic}
-        nameCast ={movie.castItems[2].character.cast[0].name} />
-          </div> */}
+
       
       </div>
       <hr width="80%" size="0.5px" color="red" style={{ marginTop: "20px" }} />

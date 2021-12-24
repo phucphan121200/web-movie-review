@@ -75,7 +75,7 @@ const MovieDetail = () => {
                     <span className="sort-cast-deatil">
                         <ListCast />
                         <DetailMovie />
-                        <CommentList />
+                        <CommentList moId={movieId} />
                     </span>
                     <span className="sort-relate-votelist">
                         <Related />

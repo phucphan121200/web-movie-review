@@ -1,6 +1,6 @@
 .check{
     width: 100vw;
-    background-color: #252727;
+    background-color: var(--main-color);
     text-align: center;
     .thumbnailshow{
         margin-top: 90px;
@@ -31,7 +31,7 @@
         margin-top: 20px;
         width: 60vw;
         font-size: 25px;
-        background-color: #252727;
+        background-color: var(--main-color);
         color: white;
         border: 0px null
     }
@@ -44,7 +44,7 @@
     .desc{
         margin-top: 20px;
         font-size: 18px;
-        background-color: #252727;
+        background-color: var(--main-color);
         color: white;
         width: 60vw;
         border: 0px;
@@ -55,7 +55,7 @@
         margin-top: 20px;
         height: 40px;
         font-size: 16px;
-        background-color: #252727;
+        background-color: var(--main-color);
         border-radius: 5px;
         color: white;
     }

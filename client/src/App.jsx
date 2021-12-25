@@ -15,6 +15,7 @@ import Resetpassword from "./pages/resetPassword/resetPassword";
 import { useSelector } from 'react-redux'
 import ForumHome from "./pages/ForumHome/ForumHome";
 import CreatePost from "./pages/createPost/CreatePost";
+import Profile from "./pages/profile/Profile";
 
 function App () {
   const auth = useSelector(state => state.auth)
@@ -28,6 +29,9 @@ function App () {
           <Route path="/login" component={isLogged ? Home : Login} exact />
         <Route path="/register">
         {!isLogged ? <Register/>:<Redirect to="/"/>}
+        </Route>
+        <Route path="/profile">
+            <Profile/>
         </Route>
         <Route path="/forgot_password">
             <Email/>
@@ -47,6 +51,7 @@ function App () {
         </Route>
         <Route path ="/castDetail/:id">
           <CastDT/>
+        </Route>
         <Route path="/forum">
             <ForumHome/>
 

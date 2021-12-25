@@ -65,6 +65,9 @@ function App () {
         <Route path="/watch">
             <Watch/>
         </Route>
+        <Route path="/news">
+            <News/>
+        </Route>
         
         
         </>

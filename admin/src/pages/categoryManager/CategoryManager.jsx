@@ -26,12 +26,7 @@ export default function NewList() {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const res = await axios.get("/categories/", {
-          headers: {
-            token:
-              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-          },
-        });
+        const res = await axios.get("/categories/");
         setNotify({
           isOpen: true,
           message: "Successfully",

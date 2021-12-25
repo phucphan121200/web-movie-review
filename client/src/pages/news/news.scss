@@ -2,77 +2,56 @@
     background-color: var(--main-color);
     overflow: hidden;
     
-    .body{
-        min-height: 528px;
+    .bodynews{
         
+        min-height: 528px;
         margin: 0 auto;
-        .left{
+        padding-top: 4%;
+        .leftNews{
         padding-left: 20px;
-        padding-right: 10px;
         float: left;
         position: relative;
         min-height: 1px;
-       
-            
+        max-width: 80%;
         }
          
-        h1::before{
+        .beforeheader::before{
             background-color: #FA320A;
             content: " ";
             min-width: 20px;
             height: 25px;
-            left:0;
+            left:3%;
             position: absolute;
             top: 11px;
              
         }
-        h1::after{
+    
+        .beforeheader::after{
             position: absolute;
-            margin-left: 10px;
+            margin-left: 30px;
             width: 100%;
             background-color: #FA320A;
             content: " ";
-            min-width: 20px;
+            max-width: 60%;
             height: 25px;
             top: 11px;
             
-        }
-        .panel_left{
-            margin-bottom: 20px;
             
-            
-            border: none;
-            border-bottom: solid 1px ;
-            border-radius: 0;
-            box-shadow: none;
-            clear: both;
-            cursor: default;
-            padding-bottom: 5px;
-            position: relative;
-            line-height: 1.35;
         }
-        .panel_body_left
-        {
-            clear: both;
-            overflow: hidden;
-            padding: 15px;
+      
+            
         
-        }
-
-        .right{
-            padding-left: 10px;
+        .rightNews{
+            
             padding-right: 20px;
             float: left;
             position: relative;
-            
+            border: 2px solid;
             margin-top:5px;
-            background-color: var(--main-color);
             overflow: hidden;
             padding-left: 20px !important;
             font-size: 12px;
-             font-family: sans-serif;
-
-            
+            font-family: sans-serif;
 
         }
         
@@ -89,13 +68,53 @@
             }
         }
 
-    h1, h2, h3{
+    .headerNew{
+        padding-left: 40px;
         text-transform: uppercase;
         color: white;
     }
+    .headerNew2{
+        
+        text-transform: uppercase;
+        color: white;
+        font-weight: 300;
+        font-size: medium;
+        
+    }
+    .headerNewh2{
+        padding-bottom: 50px;
+    }
+    .spanNew{
 
+        color: rgb(230, 230, 240);
+        font-weight: 300;
+        font-size: medium;
+        font-style: italic;
+        padding-left: 40%;
+   
+        
+    }
+    .spanNew:hover{
+        text-decoration:none ;
+        color:red;
+      }
+      .spanNew1{
 
-      
+        color: rgb(230, 230, 240);
+        font-weight: 300;
+        font-size: medium;
+        font-style: italic;
+        padding-left: 1%;
+        
+    }
+    .spanNew1:hover{
+        text-decoration:none ;
+        color:red;
+      }
+
+    .lineNew{
+        padding-bottom: 50px;
+    }
     .panel{
         
         float: left;
@@ -104,10 +123,10 @@
     }
     
     .panel_right{
-        
+       
         clear: both;
-         overflow: hidden;
-        padding: 15px;
+        overflow: hidden;
+        
 
     }
         
@@ -119,7 +138,7 @@
         margin-left: 10px;
         margin-top: 9px;
         overflow:hidden;
-       
+        padding-bottom: 3%;
     }
     .row{
         clear: both;
@@ -141,17 +160,10 @@
     }
 
     .row-right{
-
-    }
-
-    .otherNews{
-        border: 7px solid !important;
-    }
-    .otherNewss{
-        border: 6px solid  !important;
-    }
     
+    }
 
+  
 @media (min-width: 768px) {
     .body { 
         width: 1700px;
@@ -161,13 +173,13 @@
   }
 
 @media (min-width: 768px) {
-    .left{ 
-      width: 1300px;
+    .leftNews{ 
+      width: 1100px;
     }
   }
 
 @media (min-width: 768px) {
-    .right{ 
+    .rightNews{ 
       width:300px;
     }
   }

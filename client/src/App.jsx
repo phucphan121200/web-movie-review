@@ -13,6 +13,8 @@ import Navbar from "./components/navbar/Navbar";
 import Email from "./pages/email/email";
 import Resetpassword from "./pages/resetPassword/resetPassword";
 import { useSelector } from 'react-redux'
+import ForumHome from "./pages/ForumHome/ForumHome";
+import CreatePost from "./pages/createPost/CreatePost";
 
 function App () {
   const auth = useSelector(state => state.auth)
@@ -45,6 +47,12 @@ function App () {
         </Route>
         <Route path ="/castDetail/:id">
           <CastDT/>
+        <Route path="/forum">
+            <ForumHome/>
+
+        </Route>
+        <Route path="/create">
+            <CreatePost/>
         </Route>
         {isLogged && (
           <>

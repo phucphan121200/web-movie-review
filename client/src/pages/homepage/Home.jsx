@@ -7,9 +7,10 @@ import {dispatchLogin, fetchUser, dispatchGetUser} from '../../redux/actions/aut
 import {fetchMovie, dispatchGetMovie} from '../../redux/actions/movieAction'
 import "./home.scss"
 import axios from 'axios';
+import BurgerButton from "../../components/burger/burgerButton";
 
 const Home = ({type}) => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
   useEffect(() => {
@@ -49,7 +50,11 @@ const Home = ({type}) => {
             <Featured type={type}/>
             <List/>
             <List/>
-            <List/>    
+            <List/>
+            {
+              auth.isLogged ?
+              <BurgerButton/> :<></>
+            } 
             
         </div>
     )

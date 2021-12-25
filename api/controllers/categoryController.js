@@ -9,11 +9,6 @@ exports.addCategory = async (req, res) => {
     if(req.userExists.isAdmin){
     const newCategory = {
         name: req.body.name,
-        // country: 
-        //      {
-        //         _id: new mongoose.Types.ObjectId(),
-        //         name: req.body.country
-        //      }
     }
     try{
         if (!req.body.name) {

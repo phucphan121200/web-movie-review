@@ -16,7 +16,7 @@ ReactDOM.render (
       <App />
       </CastContextProvider>
     </DataProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
     </Router>,
      
     

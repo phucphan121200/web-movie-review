@@ -27,6 +27,7 @@ const Navbar = () => {
                 <ArrowDropDown className="icon" />
                 <div className="options">
                     <span>Settings</span>
+                    <span onClick={handleProfile}>Profile</span>
                     <span onClick={handleLogout}>Logout</span>
                 </div>
             </div>
@@ -40,6 +41,9 @@ const Navbar = () => {
         } catch (err) {
             window.location.href = "/";
         }
+    }
+    const handleProfile =() =>{
+        window.location.href = "/profile"
     }
     const [isScolled, setIsScrolled] = useState(false);
     const History = useHistory()

@@ -229,6 +229,7 @@ exports.getallbygenre = async (req, res) => {
 }
 //GET ALL PUBLISH POST BY USER
 exports.getallpublishbyuser = async (req, res) => {
+    console.log(req.userExists.id)
     try {
         const getPost = await postService.getPostPublishbyUser(req.userExists.id);
         if (!getPost) {

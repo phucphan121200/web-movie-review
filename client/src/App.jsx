@@ -22,6 +22,7 @@ import ProfileScreen from "./components/ProfileScreen/ProfileScreen";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ChangePassword from "./pages/changePassword/changePassword";
+import WatchList from "./pages/watchList/watchList";
 function App() {
   const auth = useSelector((state) => state.auth);
   const { isLogged } = auth;
@@ -70,6 +71,9 @@ function App() {
             </Route>
             <Route path="/news">
               <News />
+            </Route>
+            <Route path="/watch-list" exact>
+              <WatchList></WatchList>
             </Route>
           </>
         )}

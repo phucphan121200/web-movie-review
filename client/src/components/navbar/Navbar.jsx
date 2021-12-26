@@ -62,7 +62,7 @@ const Navbar = () => {
                     <span><Link className="link" to="/movies">Movies</Link></span>
                     <span><Link className="link" to="/news">New and Popular</Link></span>
                     <span>Celebrity</span>
-                    <span>Watch List</span>
+                    {isLogged && <span> <Link to="/watch-list" className="link">Watch List</Link></span>}
                 </div>
                 <div className="right">
                     <Searchbar />

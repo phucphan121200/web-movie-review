@@ -67,7 +67,7 @@ exports.find = async (req, res) => {
       //console.log(findFavorite);
   
       if (!findFavorite) {
-        res.status(403).json("Add to FavoriteList now!")
+        res.status(403).json({msg: "Add to FavoriteList now!"})
       }
       if(findFavorite){
         let favoriteItems ={};

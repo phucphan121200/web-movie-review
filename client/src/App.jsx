@@ -23,6 +23,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ChangePassword from "./pages/changePassword/changePassword";
 import WatchList from "./pages/watchList/watchList";
+import ForumHome from "./pages/ForumHome/ForumHome";
+import CreatePost from "./pages/createPost/CreatePost";
+import Profile from "./pages/profile/Profile";
 function App() {
   const auth = useSelector((state) => state.auth);
   const { isLogged } = auth;
@@ -36,6 +39,9 @@ function App() {
         <Route path="/login" component={isLogged ? Home : Login} exact />
         <Route path="/register">
           {!isLogged ? <Register /> : <Redirect to="/" />}
+        </Route>
+        <Route path="/profile">
+            <Profile/>
         </Route>
         <Route path="/forgot_password">
           <Email />
@@ -52,6 +58,16 @@ function App() {
         <Route path="/movies/:id">
           <MovieDetail></MovieDetail>
         </Route>
+        <Route path ="/castDetail/:id">
+          <CastDT/>
+        </Route>
+        <Route path="/forum">
+            <ForumHome/>
+
+        </Route>
+        <Route path="/create">
+            <CreatePost/>
+        </Route>
         {isLogged && (
           <>
             <Route path="/movies">
@@ -60,7 +76,7 @@ function App() {
             <Route path="/series">
               <Home type="series" />
             </Route>
-            <Route path="/profile" exact>
+            <Route path="/setting" exact>
               <ProfileScreen />
             </Route>
             <Route path="/profile/:userId/change-password">

@@ -7,9 +7,10 @@ import {dispatchLogin, fetchUser, dispatchGetUser} from '../../redux/actions/aut
 import {fetchMovie, dispatchGetMovie} from '../../redux/actions/movieAction'
 import "./home.scss"
 import axios from 'axios';
+import BurgerButton from "../../components/burger/burgerButton";
 
 const Home = ({type}) => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const token = useSelector(state => state.token)
   const auth = useSelector(state => state.auth)
   const [lists, setLists] = useState([]);
@@ -54,7 +55,7 @@ const Home = ({type}) => {
   },[token, dispatch])
   useEffect(() => {
       const getMovie = () => {
-        return fetchMovie("61b42a606bc815236804f9e9").then(res => {
+        return fetchMovie("6196757511a521225c2849c9").then(res => {
           dispatch(dispatchGetMovie(res))
         })
       }
@@ -67,7 +68,10 @@ const Home = ({type}) => {
             {lists.map((list)=>(
                 <List list={list} key={list._id} />
             ))}
-            
+            {
+              auth.isLogged ?
+              <BurgerButton/> :<></>
+            }  
         </div>
     )
 }

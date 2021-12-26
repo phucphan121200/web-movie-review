@@ -1,16 +1,18 @@
-import { Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined } from "@material-ui/icons"
-import "./cast.scss"
-import React, { useEffect, useState } from 'react'
-
-
+import "./cast.scss";
+import React, { useContext, useState } from "react";
+import { Dialog } from "@material-ui/core";
+import DialogContent from "@material-ui/core/DialogContent";
+import { CastContext } from "../../redux/castContext/CastContext";
+import { getCastsFind } from "../../redux/castContext/apiCalls";
+import { ArrowBack } from "@material-ui/icons";
 export default function Cast(index) {
-    return (
-            <div 
-            className="cast">
-
-                <img src="https://ss-images.saostar.vn/2019/06/14/5410259/tomholland-gettyimages-982644220-920x584.jpg" alt="" />
-                <div className="name-cast">Tom Holland</div>
-                <div className="name-charac">Peter Parker</div> 
-            </div>
-    )
+  
+  return (
+    <div className="cast"  >
+      <img src={index.castPic} alt="" />
+      <div className="name-cast">{index.nameCast}</div>
+      <div className="name-charac">{index.nameCha}</div>
+     
+    </div>
+  );
 }

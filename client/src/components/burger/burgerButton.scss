@@ -1,0 +1,44 @@
+.class{
+    .fancy-burger{
+        position: fixed;
+        width: 50px;
+        right: 5%;
+        bottom: 5%;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        outline: none;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(189, 189, 189);
+            .rectangle--landscape {
+                transform: translateZ(0px) rotate(-90deg);
+            }
+            .rectangle--portrait {
+                transform: translateX(0px) rotate(-90deg);
+            }
+        }
+        .rectangle--landscape {
+            position: absolute;
+            height: 36px;
+            background: rgb(75, 75, 75);
+            border-radius: 10px;
+            transition: transform 0.65s;
+            left:45%;
+            top: 5px;
+            width: 5px;
+            transform: translateZ(-50%);
+        }
+        .rectangle--portrait {
+            position: absolute;
+            height: 5px;
+            background: rgb(75, 75, 75);
+            border-radius: 10px;
+            transition: transform 0.65s;
+            top:50%;
+            left: 4px;
+            width: 38px;
+            transform: translateY(-50%);
+        }
+    }
+}

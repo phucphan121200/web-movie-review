@@ -1,0 +1,94 @@
+.check{
+    width: 100vw;
+    background-color: var(--main-color);
+    text-align: center;
+    .thumbnailshow{
+        margin-top: 90px;
+        width: 50vw;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 0px null;
+        cursor: pointer;
+    }
+    .buttonUpload{
+        margin-left: 30px;
+        cursor: pointer;
+        background-color: red;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        z-index: 100;
+    }
+    .thumbnailButton{
+        color: white;
+        font-size: 30px;
+    }
+    .title{
+        margin-top: 20px;
+        width: 60vw;
+        font-size: 25px;
+        background-color: var(--main-color);
+        color: white;
+        border: 0px null
+    }
+    .quill{
+        width: 60vw;
+        margin-top: 20px;
+        display: inline-block;
+        color: rgb(255, 255, 255);
+    }
+    .desc{
+        margin-top: 20px;
+        font-size: 18px;
+        background-color: var(--main-color);
+        color: white;
+        width: 60vw;
+        border: 0px;
+        height: auto;
+    }
+    .getgenre{
+        width: 60.5vw;
+        margin-top: 20px;
+        height: 40px;
+        font-size: 16px;
+        background-color: var(--main-color);
+        border-radius: 5px;
+        color: white;
+    }
+    .buttonsavecreate{
+        margin-top: 30px;
+        .buttonSavePost{
+            width: 140px;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: #f34c4c;
+            color: white;
+            font-weight: bold;
+            &:hover{
+                background-color: #c53c3c;
+                color: rgb(202, 201, 201);
+            }
+        }
+        .buttonCreate{
+            margin-left: 40px;
+            width: 140px;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: white;
+            color: rgb(255, 96, 96);
+            font-weight: bold;
+            &:hover{
+                background-color: rgb(202, 201, 201);
+                color: #c53c3c;
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+.dropdown-menuCate {
+  background: rgba(0, 0, 0, 0.795);
+  position: absolute;
+  top: 30px;
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+ width: 600px;
+
+  }
+  .dropdownGenredetail{
+    text-align: justify;
+    background-color: var(--main-color);
+   
+    .name-dropdownGenre{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        font-size: 3rem;
+        font-weight: 900;
+        padding-bottom: 100px;
+
+    }
+    .IcondropdownGenreReturn{
+        margin-right: 5px;
+        color: white;
+        font-size: 50px ;
+        padding: 10px 10px;
+        font-weight: 900;
+    }
+    .infodropdownGenreDT{
+      display: flex;
+      flex-wrap: wrap;
+     
+        img{
+            display : block;
+            height: 180px;
+            width: 280px;
+            padding: 0 2%;       
+            object-fit:cover;
+            margin-bottom: 50px;
+            }
+            
+            
+    }
+    .contentdropdownGenreDT{
+        color: whitesmoke;       
+        line-height: 1.6rem;
+        padding-right: 40px;
+        .itemdropdownGenreDT{
+            margin-bottom: .25em;
+        }
+       p{
+           color: whitesmoke;
+       }
+    }
+    
+}
+
+
+
+  .dropdown-menuCate li {
+    background: transparent;
+    height: 50px;
+    width: 120px;
+    text-align: center;
+    
+  }
+  
+  .dropdown-menuCate li:hover {
+    text-decoration:none ;
+    color:red;
+    
+  }
+  
+  .dropdown-menuCate.clicked {
+    display: none;
+  }
+  
+  .dropdown-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px;
+  }
+  
+  @media screen and (max-width: 960px ) {
+    .fa-caret-down {
+      display: none;
+    }
+  }

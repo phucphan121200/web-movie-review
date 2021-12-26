@@ -6,7 +6,16 @@
   top: 0;
   z-index: 999;
   background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.6) 50%);
-
+  .iconGenre{
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration:none ;
+  }
+  .iconGenre:hover{
+    text-decoration:none ;
+    color:red;
+  }
   &.scrolled{
     background-color: var(--main-color);
   }
@@ -16,6 +25,10 @@
 
   }
   .link:hover{
+    text-decoration:none ;
+    color:red;
+  }
+  .icon:hover{
     text-decoration:none ;
     color:red;
   }

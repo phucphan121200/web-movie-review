@@ -19,6 +19,7 @@ export default function ListItem({index, item}) {
         getMovie();
       }, [item]);  
       console.log(movie) 
+    const trailer ="https://firebasestorage.googleapis.com/v0/b/netflix-59bfe.appspot.com/o/items%2FArcane_%20Official%20Trailer.mp4?alt=media&token=93621232-7550-45a8-8199-d5c17f089a1a"
     return (
         <Link to={{pathname: "/watch", movie: movie}}>
         <div>

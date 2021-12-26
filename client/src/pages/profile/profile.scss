@@ -1,0 +1,25 @@
+.profile-page{
+    background-color: var(--main-color);
+    
+    .sort{
+        display: table;
+        content: "";
+        clear: both;
+        width: 100%;
+        .sort-general{
+            float: left;
+            width: 30%;
+        }
+        .sort-menu{
+            float: left;
+            width: 70%;
+        }
+    }
+    
+}
+@media screen and (max-width: 100%) {
+    .sort-cast-deatil, .sort-menu { 
+      width: 100%;
+      padding: 0;
+    }
+}

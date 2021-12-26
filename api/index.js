@@ -14,6 +14,7 @@ const reviewRoute = require("./routes/reviewRoute");
 const favoriteRoute = require("./routes/favoriteRoute");
 const genreRoute = require("./routes/genreRoute");
 const postRoute = require("./routes/postRoute");
+const listRoute = require("./routes/listRoute");
 
 dotenv.config();
 
@@ -42,7 +43,7 @@ app.use("/api/reviews", reviewRoute);
 app.use("/api/favorites", favoriteRoute);
 app.use("/api/genres", genreRoute);
 app.use("/api/posts", postRoute);
-
+app.use("/api/lists", listRoute);
 
 app.listen(8800, () => {
   console.log("Backend server is running!");

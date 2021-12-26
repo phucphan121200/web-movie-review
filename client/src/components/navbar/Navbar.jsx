@@ -26,6 +26,7 @@ const Navbar = () => {
             <div className="profile">
                 <ArrowDropDown className="icon" />
                 <div className="options">
+                <span><Link className="link" to ="/setting">Settings</Link></span>
                     <span>Settings</span>
                     <span onClick={handleProfile}>Profile</span>
                     <span onClick={handleLogout}>Logout</span>
@@ -96,7 +97,7 @@ const Navbar = () => {
                     <span><Link className="link" to="/forum">Forum</Link></span>
 
                     <span>Celebrity</span>
-                    <span>Watch List</span>
+                    {isLogged && <span> <Link to="/watch-list" className="link">Watch List</Link></span>}
                 </div>
                 <div className="right">
                     <Searchbar />

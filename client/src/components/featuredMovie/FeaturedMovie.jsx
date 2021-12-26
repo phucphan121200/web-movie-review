@@ -11,7 +11,7 @@ import {
 import { useEffect } from "react"
 import axios from "axios"
 
-export default function FeaturedMovie({type}) {
+export default function FeaturedMovie({type, addToWatchList}) {
     const [openModal, setOpenModal] = useState(false);
     const movieFeatured = useSelector(state => state.movie)
     const{movie} = movieFeatured
@@ -60,7 +60,7 @@ export default function FeaturedMovie({type}) {
                         <span className="rate">Rate</span>
                     </button>
                     
-                    <button className="more">
+                    <button onClick={addToWatchList} className="more">
                         <Check/>
                         <span>Watch List</span>
                     </button>

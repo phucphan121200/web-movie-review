@@ -48,6 +48,31 @@ const MovieDetail = () => {
             getUser()
         }
     }, [token, dispatch])
+  const addToWatchList = async () => {
+    try {
+      const result = await axios.post(
+        "/favorites/add",
+        {
+          favoriteItems: {
+            movie: movie,
+          },
+        },
+        {
+          headers: {
+            token: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(result);
+      if (result.status === 201) {
+          toast.success("Added movie to watch list");
+      }else{
+          toast.error("Error");
+      }
+    } catch (error) {
+        error.response.data.msg && toast.error(error.response.data.msg)
+    }
+  };
     useEffect(() => {
         const getMovie = () => {
             return fetchMovie(movieId).then(res => {
@@ -71,7 +96,7 @@ const MovieDetail = () => {
                 moviesStore.length !== 0 && 
                 <div className="sort-cast-relate">
                     <Navbar />
-                    <FeaturedMovie />
+                    <FeaturedMovie addToWatchList={addToWatchList}/>
                     <span className="sort-cast-deatil">
                         <ListCast />
                         <DetailMovie />
@@ -89,4 +114,4 @@ const MovieDetail = () => {
     )
 }
 
-export default MovieDetail
+export default MovieDetail;

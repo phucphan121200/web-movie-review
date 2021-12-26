@@ -19,6 +19,11 @@ const authReducer = (state = initialState, action) => {
                 user: action.payload.user,
                 isAdmin: action.payload.isAdmin
             }
+        case ACTIONS.UPDATE_USER:
+            return{
+                ...state,
+                user: action.payload.data
+            }
         default:
             return state
     }

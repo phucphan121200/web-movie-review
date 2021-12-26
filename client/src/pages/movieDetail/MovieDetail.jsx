@@ -58,12 +58,12 @@ const MovieDetail = () => {
     }, [movieId])
 
     useEffect(() => {
-        const getMovie = () => {
+        const getRatingMovie = () => {
             return fetchRatingMovie(movieId).then(res => {
                 dispatch(dispatchGetRatingMovie(res))
             })
         }
-        getMovie()
+        getRatingMovie()
     }, [movieId])
     return (
         <div className="movieDetail">

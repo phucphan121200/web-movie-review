@@ -2,7 +2,9 @@ import React, {useEffect, useState} from 'react'
 import "./general.scss"
 import { useSelector } from 'react-redux'
 import axios from 'axios'
-
+import {
+    Link
+} from "react-router-dom";
 
 const General = () => {
     const auth = useSelector(state => state.auth);
@@ -24,7 +26,7 @@ const General = () => {
             })
             setcountWish(reswish.data.favoriteItems.length)
         } catch (err) {
-            err.response.data.msg && setcountPost(0)
+            err.response.data.msg && setcountWish(0)
         }
     }, [token])
     return (
@@ -33,7 +35,7 @@ const General = () => {
                 <img className='profile-img' src={auth.user.profilePic} alt="" />
                 <div className='name-user'>{auth.user.firstname} {auth.user.lastname}</div>
                 <div className='email-user'>{auth.user.email}</div>
-                <button className='button-setting'>Setting</button>
+                <Link to ="/setting"><button className='button-setting'>Setting</button></Link>
                 <div className='line'></div>
                 <div className='more'>
                     <span className='post'>

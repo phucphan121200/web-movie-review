@@ -30,6 +30,7 @@ exports.add = async (req, res) => {
 //PUBLISH
 exports.publish = async (req, res) => {
     const { title, content, desc, thumbnail, genre } = req.body;
+    console.log(content.length)
     const newPost = {
         user: req.userExists.id,
         title: title,

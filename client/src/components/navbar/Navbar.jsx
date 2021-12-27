@@ -17,6 +17,7 @@ const Navbar = () => {
     const auth = useSelector(state => state.auth)
     const { user, isLogged } = auth
     console.log(useSelector(state => state.token))
+    const history = useHistory();
     const userLink = () => {
         return <>
             <span>{user.firstname} {user.lastname}</span>
@@ -27,9 +28,8 @@ const Navbar = () => {
                 <ArrowDropDown className="icon" />
                 <div className="options">
                 <span><Link className="link" to ="/setting">Settings</Link></span>
-                    <span>Settings</span>
-                    <span onClick={handleProfile}>Profile</span>
-                    <span onClick={handleLogout}>Logout</span>
+                    <span className="link" onClick={handleProfile}>Profile</span>
+                    <span className="link" onClick={handleLogout}>Logout</span>
                 </div>
             </div>
         </>
@@ -70,33 +70,36 @@ const Navbar = () => {
           setDropdown(false);
         }
       };
-      
+      const gotoHome = () => {
+          history.push("/")
+      }
     return (
         <div className={isScolled ? "navbar scrolled" : "navbar"}>
             <div className="container">
 
                 <div className="left">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+                    <img className="logoimg"
+                        src="https://firebasestorage.googleapis.com/v0/b/netflix-59bfe.appspot.com/o/images%2FLogo.png?alt=media&token=22276c2d-a3db-410e-a480-e1602b74d20b"
                         alt=""
+                        onClick={gotoHome}
                     />
                     <span><Link className="link" to="/">Home</Link></span>
                     
-                    <span><Link className="link" to="/series">Series</Link></span>
-                    <span><Link className="link" to="/movies">Movies</Link></span>
+                    {/* <span><Link className="link" to="/series">Series</Link></span>
+                    <span><Link className="link" to="/movies">Movies</Link></span> */}
                     <span
                      onMouseEnter={onMouseEnter}
                      onMouseLeave ={onMouseLeft}
                      >
                      <Link className="iconGenre"  
-                    > Genre  <ArrowDropDown /> </Link>
+                    > Genre </Link>
                       <Dropdown dropdown={dropdown} setDropdown={setDropdown}/>
                     </span>
                     
 
                     <span><Link className="link" to="/forum">Forum</Link></span>
 
-                    <span>Celebrity</span>
+                    {/* <span>Celebrity</span> */}
                     {isLogged && <span> <Link to="/watch-list" className="link">Watch List</Link></span>}
                 </div>
                 <div className="right">

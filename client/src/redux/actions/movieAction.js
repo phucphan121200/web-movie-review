@@ -29,3 +29,18 @@ export const dispatchGetRatingMovie = (res) => {
     }
 }
 
+export const fetchReviewMovie = async (id) => {
+    const res = await axios.get("/reviews/find/" + id);
+    console.log(res)
+    return res
+}
+
+export const dispatchGetReviewMovie = (res) => {
+    return {
+        type: ACTIONS.GET_REVIEW_MOVIE,
+        payload: {
+            review: res.data,
+        }
+    }
+}
+

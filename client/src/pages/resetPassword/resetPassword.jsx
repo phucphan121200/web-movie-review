@@ -52,14 +52,18 @@ export default function Resetpassword() {
         setData({ ...data, err: err.response.data.msg, success: "" });
     }
   };
+  const gotoHome = () => {
+    history.push("/")
+  }
   return (
     <div className="resetPass">
       <div className="top">
         <div className="wrapper">
           <img
             className="logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+            src="https://firebasestorage.googleapis.com/v0/b/netflix-59bfe.appspot.com/o/images%2FLogo.png?alt=media&token=22276c2d-a3db-410e-a480-e1602b74d20b"
             alt=""
+            onClick={gotoHome}
           />
           {err && showErrMsg(err)}
           {success && showSuccessMsg(success)}

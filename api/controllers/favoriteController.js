@@ -63,11 +63,12 @@ exports.add = async (req, res) => {
 //GET
 exports.find = async (req, res) => {
     try {
+      console.log(req.userExists.id)
       const findFavorite = await favoriteService.getFavoritebyUser(req.userExists.id);
-      //console.log(findFavorite);
+      console.log(findFavorite);
   
       if (!findFavorite) {
-        res.status(403).json({msg: "Add to FavoriteList now!"})
+        res.status(404).json({msg: "Add to FavoriteList now!"})
       }
       if(findFavorite){
         let favoriteItems ={};

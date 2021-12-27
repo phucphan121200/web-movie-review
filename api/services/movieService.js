@@ -34,7 +34,7 @@ class movieService{
         populate("categoryItems.category", "_id name").
         populate("castItems.character", "_id name cast");
         const {releaseDate, ...info} = movie._doc;
-        info.releaseDate = movie.releaseDate.getDate()+'-' + (movie.releaseDate.getMonth()+1) + '-'+movie.releaseDate.getFullYear();
+        info.releaseDate = movie.releaseDate.getDate()+'/' + (movie.releaseDate.getMonth()+1) + '/'+movie.releaseDate.getFullYear();
         return info;
       }
     static async getAll() {

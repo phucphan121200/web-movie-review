@@ -96,7 +96,7 @@ const CreatePost = () => {
 
 
         <ReactQuill className="quill" setBody={setBody} />
-
+        <small style={{ color: "gray" }}>{post == null ? 0 : (post.content == null ? 0 : post.content.length)}/2000</small>
         <div className='cate'>
           <select className='getgenre' value={genre.name} name="genre" onChange={handleInput}>
             <option value="">Choose a category</option>

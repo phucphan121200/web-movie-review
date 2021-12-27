@@ -46,7 +46,7 @@ const ProfileScreen = () => {
   const [msg, setMsg] = useState("");
 
   const changePassClick = () => {
-    history.push(`/profile/${user._id}/change-password`);
+    history.push(`/${user._id}/change-password`);
   };
   const updateProfile = async () => {
     try {

@@ -11,9 +11,10 @@ import CommentList from "../../components/commentList/CommentList"
 import ModalNotiRating from "../../components/modal/modalNotiRating/ModalNotiRating"
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovie, dispatchGetMovie, fetchRatingMovie, dispatchGetRatingMovie } from '../../redux/actions/movieAction'
+import { fetchMovie, dispatchGetMovie, fetchRatingMovie, dispatchGetRatingMovie, fetchReviewMovie, dispatchGetReviewMovie } from '../../redux/actions/movieAction'
 import { dispatchLogin, fetchUser, dispatchGetUser } from '../../redux/actions/authAction'
 import axios from "axios"
+import { toast } from "react-toastify";
 
 const MovieDetail = () => {
     const location = useLocation();
@@ -22,7 +23,7 @@ const MovieDetail = () => {
     const dispatch = useDispatch()
     const token = useSelector(state => state.token)
     const auth = useSelector(state => state.auth)
-    const moviesStore = useSelector(state => state.movie.movie)
+    const movie = useSelector(state => state.movie.movie)
 
     useEffect(() => {
 
@@ -54,7 +55,7 @@ const MovieDetail = () => {
         "/favorites/add",
         {
           favoriteItems: {
-            movie: movie,
+            movie: movie._id,
           },
         },
         {
@@ -90,10 +91,19 @@ const MovieDetail = () => {
         }
         getRatingMovie()
     }, [movieId])
+
+    useEffect(() => {
+        const getReviewMovie = () => {
+            return fetchReviewMovie(movieId).then(res => {
+                dispatch(dispatchGetReviewMovie(res))
+            })
+        }
+        getReviewMovie()
+    }, [movieId])
     return (
         <div className="movieDetail">
             {
-                moviesStore.length !== 0 && 
+                movie.length !== 0 && 
                 <div className="sort-cast-relate">
                     <Navbar />
                     <FeaturedMovie addToWatchList={addToWatchList}/>

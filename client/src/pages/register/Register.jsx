@@ -4,7 +4,7 @@ import '@date-io/date-fns'
 import Grid  from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
 import isEmpty from "validator/lib/isEmpty"
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import{
   MuiPickersUtilsProvider,
   KeyboardTimePicker,
@@ -30,7 +30,7 @@ export default function Register() {
   // const [selectedDate, setSelectedDate] = React.useState(
   //   new Date("2020-09-11T12:00:00")
   // )
-
+  const history = useHistory();
   const { firstname, lastname, email, password, cf_password, dob, err, success } = user
 
   const handleChangeInput = e => {
@@ -50,6 +50,9 @@ export default function Register() {
         setUser({ ...user, err: err.response.data.msg, success: '' })
     }
   }
+  const gotoHome = () => {
+    history.push("/")
+  }
   console.log(user)
     return (
       <div className="register">
@@ -57,8 +60,9 @@ export default function Register() {
           <div className="wrapper">
             <img
               className="logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
+              src="https://firebasestorage.googleapis.com/v0/b/netflix-59bfe.appspot.com/o/images%2FLogo.png?alt=media&token=22276c2d-a3db-410e-a480-e1602b74d20b"
               alt=""
+              onClick={gotoHome}
             />
             {err && showErrMsg(err)}
             {success && showSuccessMsg(success)}

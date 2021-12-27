@@ -79,7 +79,7 @@ function App() {
             <Route path="/setting" exact>
               <ProfileScreen />
             </Route>
-            <Route path="/profile/:userId/change-password">
+            <Route path="/:userId/change-password">
               <ChangePassword></ChangePassword>
             </Route>
             <Route path="/watch">

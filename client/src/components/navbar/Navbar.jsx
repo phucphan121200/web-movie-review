@@ -27,7 +27,7 @@ const Navbar = () => {
             <div className="profile">
                 <ArrowDropDown className="icon" />
                 <div className="options">
-                <span><Link className="link" to ="/setting">Settings</Link></span>
+                {/* <span><Link className="link" to ="/setting">Settings</Link></span> */}
                     <span className="link" onClick={handleProfile}>Profile</span>
                     <span className="link" onClick={handleLogout}>Logout</span>
                 </div>
@@ -91,8 +91,8 @@ const Navbar = () => {
                      onMouseEnter={onMouseEnter}
                      onMouseLeave ={onMouseLeft}
                      >
-                     <Link className="iconGenre"  
-                    > Genre </Link>
+                     <p className="iconGenre"  
+                    > Genre </p>
                       <Dropdown dropdown={dropdown} setDropdown={setDropdown}/>
                     </span>
                     

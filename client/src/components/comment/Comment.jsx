@@ -1,6 +1,7 @@
 import { Star } from "@material-ui/icons"
 import { FaStar } from "react-icons/fa"
 import "./comment.scss"
+import moment from "moment"
 
 export default function Comment(cmtindex) {
     
@@ -24,7 +25,7 @@ export default function Comment(cmtindex) {
                 
                 <div className="name-time">
                     <div className="user-name">{cmtindex.usernameF} {cmtindex.usernameL}</div>
-                    <div className="time">//October 13, 2021</div>
+                    <div className="time">{moment(cmtindex.time).format("LL")}</div>
                 </div>
             </div>
             

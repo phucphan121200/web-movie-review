@@ -1,4 +1,4 @@
-import { Check, PlayArrow, Star } from "@material-ui/icons"
+import { Check, KeyboardArrowDown, PlayArrow, Star } from "@material-ui/icons"
 import { useState } from "react"
 import { FaStar } from "react-icons/fa"
 // import ModalNotiRating from "../modal/modalNotiRating/ModalNotiRating"
@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { useEffect } from "react"
 import axios from "axios"
+import moment from "moment"
 
 export default function FeaturedMovie({ type, addToWatchList }) {
     const [openModal, setOpenModal] = useState(false);
@@ -29,6 +30,9 @@ export default function FeaturedMovie({ type, addToWatchList }) {
             <img
                 src={movie.coverPic}
                 alt="" />
+            <div class="arrow bounce">
+                <KeyboardArrowDown style={{ fontSize: "70px", color: "white" }} />
+            </div>
             <div className="info">
                 <img
                     src={movie.namePic}
@@ -36,9 +40,17 @@ export default function FeaturedMovie({ type, addToWatchList }) {
                 <div className="generinfo">
                     <span className="match">98% Match</span>
                     <span className="limit">+{movie.limit}</span>
-                    <span className="year">{movie.releaseDate}</span>
-                    <span className="rating-score">{rating}</span>
-                    <span className="rating-percent">/10</span>
+                    <span className="year">{moment(movie.releaseDate).format("LL")}</span>
+                    {
+                        rating ?
+                            <>
+                                <span className="rating-score">{rating}</span>
+                                <span className="rating-percent">/10</span>
+                            </>
+                        :
+                        <span className="rating-percent" style={{marginLeft: "10px"}}>No Rating</span>
+                    }
+
                     {/* <span className="time-detail">1 hour 14 mins</span> */}
                 </div>
                 <div className="time">
@@ -71,10 +83,9 @@ export default function FeaturedMovie({ type, addToWatchList }) {
                                 </button>
                                 {openModal && <ModalRating closeModal={setOpenModal} />}
                             </>
-                        :
-                        <></>
+                            :
+                            <></>
                     }
-
                 </div>
             </div>
         </div>

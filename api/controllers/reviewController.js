@@ -131,7 +131,7 @@ exports.find = async (req, res) => {
   // });
   try {
     const findReview = await reviewService.getReviewbyMovie(req.params.id);
-    //console.log(findReview);
+    console.log(findReview.reviewItems)
 
     if (!findReview) {
       res.status(403).json("Review not found!")

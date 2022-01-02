@@ -33,9 +33,9 @@ class movieService{
         populate("productionItems.production","_id name founder foundingdate").
         populate("categoryItems.category", "_id name").
         populate("castItems.character", "_id name cast");
-        const {releaseDate, ...info} = movie._doc;
-        info.releaseDate = movie.releaseDate.getDate()+'/' + (movie.releaseDate.getMonth()+1) + '/'+movie.releaseDate.getFullYear();
-        return info;
+        // const {releaseDate, ...info} = movie._doc;
+        // info.releaseDate = movie.releaseDate.getDate()+'/' + (movie.releaseDate.getMonth()+1) + '/'+movie.releaseDate.getFullYear();
+        return movie;
       }
     static async getAll() {
         return await Movie.find({"status": true}).

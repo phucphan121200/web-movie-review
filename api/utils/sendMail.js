@@ -38,7 +38,7 @@ const sendEmail = async (to, firstName, lastName, url, txt) => {
     const mailOptions = {
         from: SENDER_EMAIL_ADDRESS,
         to: to,
-        subject: "Netflix Registation",
+        subject: "Movie Critic",
         html: `
             <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
             <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome ${firstName} ${lastName} </h2>

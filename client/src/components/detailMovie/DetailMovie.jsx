@@ -1,25 +1,10 @@
 import "./detailMovie.scss"
 import { DehazeOutlined } from "@material-ui/icons"
 import {useSelector} from 'react-redux'
+import moment from "moment"
 
 export default function DetailMovie() {
     const moviedt = useSelector(state => state.movie.movie)
-    
-    const genreList = () => {
-        for(let i=0; i < moviedt.categoryItems.length; i++){
-            return <span className="gerne">{moviedt.categoryItems[i].category.name}</span>
-        }
-    }
-    const productionList = () => {
-        for(let i=0; i < moviedt.productionItems.length;i++){
-            return <span className="company">{moviedt.productionItems[i].production.name}</span>
-        }
-    }
-    const countryList = () => {
-        for(let i=0; i < moviedt.country.length;i++){
-            return <span className="country">{moviedt.country[i].name}</span>
-        }
-    }
     console.log(moviedt.categoryItems[0])
     return (
         <div className="detail">
@@ -33,17 +18,21 @@ export default function DetailMovie() {
                 <>
                     <div className="gerneral-gerne">
                 {
-                    genreList()
+                    moviedt.categoryItems.map((item) => (
+                        <span className="gerne">{item.category.name}</span>
+                    ))
                 }
                 </div>
                 <div className="gerne-items">
                 <div className="items">
                     <span className="items-item">Release Date</span>
-                    <span className="time">{moviedt.releaseDate}</span>
+                    <span className="time">{moment(moviedt.releaseDate).format("LL")}</span>
                 </div>
                 <div className="items">
                     <span className="items-item">Country of origin</span>
-                    {countryList()}
+                    {moviedt.country.map((item) => (
+                        <span className="country">{item.name}</span>
+                    ))}
                 </div>
                 <div className="items">
                     <span className="items-item">Official sites</span>
@@ -51,7 +40,11 @@ export default function DetailMovie() {
                 </div>
                 <div className="items">
                     <span className="items-item">Productions Companies</span>
-                    {productionList()}
+                    {
+                        moviedt.productionItems.map((item) => (
+                            <span className="company">{item.production.name}</span>
+                        ))
+                    }
                 </div>
                 </div> 
                 </>

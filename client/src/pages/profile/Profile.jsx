@@ -7,6 +7,7 @@ import General from "../../components/general/General"
 import Navbar from '../../components/navbar/Navbar'
 import MenuPost from '../../components/menuPost/MenuPost';
 import "./profile.scss"
+import BurgerButton from "../../components/burger/burgerButton";
 
 const Profile = () => {
     const dispatch = useDispatch()
@@ -55,6 +56,10 @@ const Profile = () => {
                     <MenuPost />
                 </div>
             </div>
+            {
+              auth.isLogged ?
+              <BurgerButton/> :<></>
+            }
         </div>
     )
 }

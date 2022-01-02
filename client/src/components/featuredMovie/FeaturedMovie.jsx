@@ -4,32 +4,34 @@ import { FaStar } from "react-icons/fa"
 // import ModalNotiRating from "../modal/modalNotiRating/ModalNotiRating"
 import ModalRating from "../modal/modalRating/ModalRating"
 import "./featuredMovie.scss"
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import {
     Link
 } from "react-router-dom";
 import { useEffect } from "react"
 import axios from "axios"
 
-export default function FeaturedMovie({type, addToWatchList}) {
+export default function FeaturedMovie({ type, addToWatchList }) {
     const [openModal, setOpenModal] = useState(false);
     const movieFeatured = useSelector(state => state.movie)
-    const{movie} = movieFeatured
+    const { movie } = movieFeatured
     const movieRating = useSelector(state => state.rating)
-    const{rating} = movieRating
+    const { rating } = movieRating
+    const isLogged = useSelector(state => state.auth.isLogged)
+
     return (
         <div className="featuredMovie">
             {type && (
                 <div className="category">
-                    
-                    </div>
+
+                </div>
             )}
-                <img 
-                    src={movie.coverPic}
-                    alt=""/>
+            <img
+                src={movie.coverPic}
+                alt="" />
             <div className="info">
-                <img 
-                    src={movie.namePic} 
+                <img
+                    src={movie.namePic}
                     alt="" />
                 <div className="generinfo">
                     <span className="match">98% Match</span>
@@ -43,31 +45,38 @@ export default function FeaturedMovie({type, addToWatchList}) {
                     {/* <span className="progress-bar" style={{width: "30%"}}></span>                     */}
                 </div>
                 <span className="description">
-                   {movie.desc}
+                    {movie.desc}
                 </span>
                 <div className="buttons">
-                <Link className="link" to="/watch">
-                    <button className="play" 
-                    // onClick={openModalTrailer}
-                    >
-                        <PlayArrow/>
-                        <span>Trailer</span>   
-                    </button>
+                    <Link className="link" to="/watch">
+                        <button className="play"
+                        // onClick={openModalTrailer}
+                        >
+                            <PlayArrow />
+                            <span>Trailer</span>
+                        </button>
                     </Link>
-                    <button className="rate"
-                    onClick={() => {setOpenModal (true)}}>
-                        <FaStar className="star"/>
-                        <span className="rate">Rate</span>
-                    </button>
-                    
-                    <button onClick={addToWatchList} className="more">
-                        <Check/>
-                        <span>Watch List</span>
-                    </button>
-                    {openModal && <ModalRating closeModal={setOpenModal}/>}
-                                  
+                    {
+                        isLogged ?
+                            <>
+                                <button className="rate"
+                                    onClick={() => { setOpenModal(true) }}>
+                                    <FaStar className="star" />
+                                    <span className="rate">Rate</span>
+                                </button>
+
+                                <button onClick={addToWatchList} className="more">
+                                    <Check />
+                                    <span>Watch List</span>
+                                </button>
+                                {openModal && <ModalRating closeModal={setOpenModal} />}
+                            </>
+                        :
+                        <></>
+                    }
+
                 </div>
-            </div>           
+            </div>
         </div>
     )
 }

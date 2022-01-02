@@ -113,7 +113,7 @@ function Dropdown({ dropdown, setDropdown }) {
                     key = {'abc'+item._id}
                     className="listItemForGenre"
                     >
-                      <img src={item.img} alt=""  />
+                      <img src={item.coverPic} alt=""  />
                       <div className="item-genre-action">
                           <video
                             src={item.trailer}
@@ -142,7 +142,7 @@ function Dropdown({ dropdown, setDropdown }) {
                             <div className="itemInfoTop">
                               <span>{item.title}</span>
                               <span className="limit">{item.limit}</span>
-                              <span>{item.releaseDate}</span>
+                              {/* <span>{item.releaseDate}</span> */}
                             </div>
                           </div>
                         </div>

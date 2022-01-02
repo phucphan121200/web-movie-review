@@ -18,13 +18,15 @@ export default function CommentList(cmt) {
 
   // console.log(comment);
   const review = useSelector(state => state.review.review);
-  console.log(review.reviewItems)
+  console.log(review)
   return (
     <div className="commentList">
       <DehazeOutlined className="icons-title" />
       <span className="detailTitle">Reviews</span>
       <div className="review-container">
-        {review?.reviewItems.map((item) => (
+        {
+        review ? 
+        review?.reviewItems.map((item) => (
           <div >
             <Comment
              quote={item.text}
@@ -34,7 +36,12 @@ export default function CommentList(cmt) {
              usernameL ={item.user.lastname}
             />
           </div>
-        ))}
+        ))
+        :
+        <div>
+          Be the first to review this movie!
+        </div>
+      }
       </div>
     </div>
   );

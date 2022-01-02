@@ -18,6 +18,7 @@ const ReviewSchema = new mongoose.Schema(
                 rating: { type: Number, min: 0, max: 10, default: 0 },
                 text: { type: String },
                 status: { type: Boolean, default: true },
+                create: {type: Date, default: Date.now()}
             }
         ]
 

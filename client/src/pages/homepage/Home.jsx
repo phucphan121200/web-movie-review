@@ -7,7 +7,6 @@ import {dispatchLogin, fetchUser, dispatchGetUser} from '../../redux/actions/aut
 import {fetchMovie, dispatchGetMovie} from '../../redux/actions/movieAction'
 import "./home.scss"
 import axios from 'axios';
-import BurgerButton from "../../components/burger/burgerButton";
 
 const Home = ({type}) => {
   const dispatch = useDispatch()
@@ -67,11 +66,7 @@ const Home = ({type}) => {
             <Featured type={type}/>
             {lists.map((list)=>(
                 <List list={list} key={list._id} />
-            ))}
-            {
-              auth.isLogged ?
-              <BurgerButton/> :<></>
-            }  
+            ))}  
         </div>
     )
 }

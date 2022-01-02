@@ -34,11 +34,12 @@ export default function CommentList(cmt) {
              profilePic ={item.user.profilePic}
              usernameF ={item.user.firstname}
              usernameL ={item.user.lastname}
+             time ={item.create}
             />
           </div>
         ))
         :
-        <div>
+        <div style={{color: "grey", fontSize: "20px", marginTop: "20px"}}>
           Be the first to review this movie!
         </div>
       }

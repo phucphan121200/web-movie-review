@@ -16,6 +16,8 @@ import {
 import * as React from "react";
 import { Link } from "react-router-dom";
 import ListItemForGenre from "../listItemForGenre/ListItemForGenre";
+import moment from "moment";
+
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
 });
@@ -142,7 +144,7 @@ function Dropdown({ dropdown, setDropdown }) {
                             <div className="itemInfoTop">
                               <span>{item.title}</span>
                               <span className="limit">{item.limit}</span>
-                              {/* <span>{item.releaseDate}</span> */}
+                              <span>{moment(item.releaseDate).format("LL")}</span>
                             </div>
                           </div>
                         </div>

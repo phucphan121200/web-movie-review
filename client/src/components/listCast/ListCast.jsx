@@ -116,8 +116,8 @@ export default function ListCast() {
                   <p className="itemcastDT">
                     <b>Biography:</b> {casts.bio}{" "}
                   </p>
-                  <p className="itemcastDT"> Highest Rated: </p>
-                  <p className="itemcastDT"> Lowest Rated: </p>
+                  {/* <p className="itemcastDT"> Highest Rated: </p>
+                  <p className="itemcastDT"> Lowest Rated: </p> */}
                   
                 </div>
               </div>
